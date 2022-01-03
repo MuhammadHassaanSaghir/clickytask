@@ -71,7 +71,7 @@ class AuthController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                 ]);
-                return redirect('home')->with('login', 'You are Logged in Successfully');
+                return redirect('home')->with('success', 'You are Logged in Successfully');
             }
         } catch (Throwable $e) {
             return response(['message' => $e->getMessage() . " Line No. " . $e->getLine()]);
