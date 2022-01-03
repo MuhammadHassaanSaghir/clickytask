@@ -29,16 +29,18 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>First</th>
-                                <th>Last</th>
+                                <th>Variant</th>
+                                <th>Stock</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                            </tr>
+                            @foreach ($data as $value)
+                                <tr>
+                                    <td>{{ $value->id }}</td>
+                                    <td>{{ $value->variant }}</td>
+                                    <td>{{ $value->stock }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

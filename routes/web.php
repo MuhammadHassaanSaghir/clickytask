@@ -25,5 +25,5 @@ Route::get('/logout', function () {
     return redirect('login');
 });
 
-Route::post('/import', [StockController::class, 'importCsv']);
+Route::post( '/import', [StockController::class, 'importCsv']);
 Route::get('/export', [StockController::class, 'exportExcel']);

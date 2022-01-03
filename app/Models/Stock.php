@@ -17,9 +17,6 @@ class Stock extends Model
     public static function getStock()
     {
         $records = DB::table('stocks')->select('variant', 'id')->get()->toArray();
-        echo "<pre>";
-        print_r($records);
-        die();
-        // return $records;
+        return $records;
     }
 }

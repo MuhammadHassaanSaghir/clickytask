@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\EmailJob;
 use App\Library\Services\Jwt_Token;
+use App\Models\Stock;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -81,7 +82,8 @@ class AuthController extends Controller
     public function index()
     {
         if (session()->has('user_id')) {
-            return view('home');
+            $stocks = Stock::get();
+            return view('home', ['data' => $stocks]);
         } else {
             return redirect('login')->with('login', 'Login First');
         }
